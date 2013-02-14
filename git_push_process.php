@@ -1,8 +1,9 @@
 <?php
 /**
  * github web hook
- * @author revvi
+ * @author Bruce Paverd
  */
+
 
 // perform json_decode of receiving $_POST
 if (get_magic_quotes_gpc()) {
@@ -12,19 +13,17 @@ else {
     $payload = json_decode($_POST['payload'], TRUE);
 }
 
-$filename = 'log.txt';
+$filename = '/tmp/log.txt';
 
 // write to log file
 $data = print_r($payload, TRUE);
 
-if (is_writable($filename)) {
-    // overwrite file
-    if (!$handle = fopen($filename, 'w')) {
-         exit;
-    }
-    // write to our opened file.
-    if (fwrite($handle, $data) === FALSE) {
-        exit;
-    }  
-    fclose($handle);
+// overwrite file
+if (!$handle = fopen($filename, 'w')) {
+ exit;
 }
+// write to our opened file.
+if (fwrite($handle, $data) === FALSE) {
+exit;
+}  
+fclose($handle);
