@@ -1,5 +1,9 @@
 #!/bin/bash
 
+. /etc/bashrc
+
+whoami
+
 # Checkout the branch
 cd /home/rcn2/committest
 git checkout prod
@@ -18,4 +22,4 @@ git branch -D $1
 git push origin $1
 
 
-echo "Done with git tag"
+echo "Done with git tag" $1
