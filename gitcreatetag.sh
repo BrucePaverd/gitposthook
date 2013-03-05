@@ -5,7 +5,7 @@
 whoami
 
 # Checkout the branch
-cd /home/rcn2/committest
+cd /home/rcn2/rcn2
 git checkout prod
 git pull
 git checkout $1
