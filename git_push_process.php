@@ -21,12 +21,12 @@ if (!$handle = fopen($filename, 'a')) {
 }
 
 // write to log file
-//$data = print_r($payload, TRUE);
+$data = print_r($payload, TRUE);
 
 // write to our opened file.
-//if (fwrite($handle, $data) === FALSE) {
-    //exit;
-//}  
+if (fwrite($handle, $data) === FALSE) {
+    exit;
+}  
 
 
 $commits = $payload["commits"];
