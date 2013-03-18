@@ -6,7 +6,7 @@ date
 
 # Checkout the branch
 cd /home/rcn2/rcn2
-git checkout prod
+git checkout testing
 git pull
 git checkout $1
 
@@ -15,10 +15,10 @@ git tag -a archive/$1 -m "Tag for $1"
 
 # Push tag
 # git push origin archive/$1
-git push --tags
+git push --tags prod
 
 # Delete branch locally and on server
-git checkout prod
+git checkout testing
 git push origin :$1
 git branch -D $1
 
